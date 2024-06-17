@@ -1,0 +1,47 @@
+.mat-stepper-horizontal {
+  background-color: rgb(32, 33, 36);
+  height: 50vh;
+  padding: 60px 300px;
+}
+
+mat-step {
+  border: 1px solid green;
+}
+
+h1 {
+  color: white;
+  font-weight: bold;
+}
+
+h3 {
+  color: white;
+}
+
+p {
+  color: lightgrey;
+}
+
+.mat-mdc-form-field {
+  width: 100%;
+  margin-top: 16px;
+}
+
+.custom-icon {
+  color: rgb(164, 164, 166);
+}
+
+button {
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .mat-stepper-horizontal {
+    padding: 55px 0;
+  }
+}
+
+::ng-deep .snackbar-fallo-registro {
+  --mdc-snackbar-container-color: red;
+  --mdc-snackbar-supporting-text-color: white;
+  text-align: center;
+}

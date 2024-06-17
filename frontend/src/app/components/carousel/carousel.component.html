@@ -1,0 +1,13 @@
+<div class="container">
+  <span>{{ titulo }}</span>
+
+  <swiper-container lazy="true" #swiperContainer slides-per-view="3" slides-per-group="7" space-between="25" navigation="true" [breakpoints]="breakpoints" style="--swiper-navigation-color: #fff;">
+    @for (pelicula of peliculas; track pelicula._id) {
+      <swiper-slide lazy="true">
+        <app-card-pelicula [pelicula]="pelicula"/>
+      </swiper-slide>
+    }
+  </swiper-container>
+</div>
+
+<!--routerLink="/browse/peliculas/{{ pelicula._id }}"-->

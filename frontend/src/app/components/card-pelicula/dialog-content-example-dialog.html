@@ -1,0 +1,38 @@
+<div id="dialog">
+  <div id="contenedorImg">
+    <img src="http://localhost:3000/{{ pelicula?.escena }}">
+  </div>
+
+  <!--<div id="contenedorImg" [style.backgroundImage]="'url(http://localhost:3000/' + (pelicula?.escena) + ')'"></div>-->
+
+  <div id="contenedorInfo">
+    <h1>{{ pelicula?.titulo }}</h1>
+
+    <a mat-fab extended (click)="watch(pelicula._id)">
+      <mat-icon>play_arrow</mat-icon>
+      Reproducir
+    </a>
+
+    <!--<video src="http://localhost:3000/{{ pelicula?.video }}" controls="true"></video>-->
+
+    <div id="contenedorAnyoTiempo">
+      <p>{{ pelicula?.anyo }}</p>
+      <p>{{ pelicula?.duracion }}</p>
+    </div>
+
+    <div id="contenedorDescripcion">
+      <p>{{ pelicula?.descripcion }}</p>
+    </div>
+
+    <div id="contenedorGenero">
+      <p>Género: <span>{{ pelicula?.genero }}</span></p>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+  </div>
+</div>

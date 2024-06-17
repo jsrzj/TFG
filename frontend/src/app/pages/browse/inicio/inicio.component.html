@@ -1,0 +1,17 @@
+<app-header-browse></app-header-browse>
+<app-sidenav>
+  @defer (on viewport) {
+    <app-slider-peliculas [peliculas]="peliculasPremiadas"/>
+    <app-carousel [titulo]="'Estrenos'" [peliculas]="peliculasEstrenadas"></app-carousel>
+    <app-carousel [titulo]="'Populares'" [peliculas]="peliculasPopulares"></app-carousel>
+    <app-carousel [titulo]="'Películas de acción'" [peliculas]="peliculasAccion"></app-carousel>
+    <app-carousel [titulo]="'Películas premiadas'" [peliculas]="peliculasPremiadas"></app-carousel>
+    <app-carousel [titulo]="'Películas de Hollywood'" [peliculas]="peliculasHollywood"></app-carousel>
+  } @placeholder { <!-- Hueco donde deberia estar -->
+    <p>Futuras peliculas</p>
+  } @loading {
+    <p>Cargando peliculas</p>
+  }
+
+</app-sidenav>
+<app-footer></app-footer>

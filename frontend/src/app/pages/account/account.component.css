@@ -1,0 +1,52 @@
+.container {
+  height: 90vh;
+}
+
+.grid {
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  padding: 0 510px;
+}
+
+.grid-item {
+  height: 200px;
+}
+
+.grid-item:nth-child(1) {
+  border: 0px solid #791919;
+  text-align: right;
+}
+
+.grid-item:nth-child(1) img {
+  width: 100%;
+  height: 100%;
+}
+
+.grid-item:nth-child(2) {
+  margin-top: 30px;
+  text-align: left;
+}
+
+span {
+  font-weight: 500;
+}
+
+p {
+  color: lightgray;
+}
+
+@media screen and (max-width: 768px) {
+  .grid {
+    padding: 0 10px;
+  }
+
+  .grid-item {
+    height: 170px;
+  }
+
+  .grid {
+    gap: 10px;
+  }
+}

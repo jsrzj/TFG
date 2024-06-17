@@ -1,0 +1,117 @@
+<mat-stepper linear #stepper labelPosition="bottom" animationDuration="500">
+  <mat-card>
+    <mat-step [stepControl]="firstFormGroup">
+      <h1 align="center">Crea tu cuenta</h1>
+      <h3 align="center">Te servirá para disfrutar en tus dispositivos favoritos.</h3>
+      <p align="center">* Indica un campo obligatorio.</p>
+
+      <ng-template matStepContent>
+        <form [formGroup]="firstFormGroup">
+          <mat-form-field class="half-width" appearance="outline">
+            <mat-label>Correo electrónico</mat-label>
+            <input matInput formControlName="correo" required>
+            <mat-icon matPrefix class="custom-icon">email</mat-icon>
+            @if (firstFormGroup.controls["correo"].hasError('required')) {
+              <mat-error>El correo electrónico es <strong>obligatorio</strong>.</mat-error>
+            }
+            @if (firstFormGroup.controls["correo"].hasError('email') || firstFormGroup.controls["correo"].hasError('maxlength')) {
+              <mat-error>Escribe un correo electrónico <strong>válido</strong>.</mat-error>
+            }
+          </mat-form-field>
+
+          <div>
+            <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
+          </div>
+        </form>
+      </ng-template>
+    </mat-step>
+
+    <mat-step [stepControl]="secondFormGroup">
+      <h1 align="center">Crea tu cuenta</h1>
+      <h3 align="center">Te servirá para disfrutar en tus dispositivos favoritos.</h3>
+      <p align="center">* Indica un campo obligatorio.</p>
+
+      <ng-template matStepContent>
+        <form [formGroup]="secondFormGroup">
+          <mat-form-field appearance="outline">
+            <mat-label>Nombre</mat-label>
+            <input matInput formControlName="nombre" required>
+            <mat-icon matPrefix class="custom-icon">person</mat-icon>
+            @if (secondFormGroup.controls["nombre"].hasError('required')) {
+              <mat-error>El nombre es <strong>obligatorio</strong>.</mat-error>
+            }
+            @if (secondFormGroup.controls["nombre"].hasError('maxlength')) {
+              <mat-error>Escribe un nombre <strong>válido</strong>.</mat-error>
+            }
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Apellidos</mat-label>
+            <mat-icon matPrefix class="custom-icon">person</mat-icon>
+            <input matInput formControlName="apellidos" required>
+            @if (secondFormGroup.controls["apellidos"].hasError('required')) {
+              <mat-error>El apellido es <strong>obligatorio</strong>.</mat-error>
+            }
+            @if (secondFormGroup.controls["apellidos"].hasError('maxlength')) {
+              <mat-error>Escribe un apellido <strong>válido</strong>.</mat-error>
+            }
+          </mat-form-field>
+
+          <mat-grid-list cols="2" rowHeight="2:1" [gutterSize]="gutterSize()">
+            <mat-grid-tile>
+              <button mat-raised-button  matStepperPrevious>Atrás</button>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+              <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
+            </mat-grid-tile>
+          </mat-grid-list>
+        </form>
+      </ng-template>
+    </mat-step>
+
+    <mat-step [stepControl]="thirdFormGroup">
+      <h1 align="center">Crea tu cuenta</h1>
+      <h3 align="center">Te servirá para disfrutar en tus dispositivos favoritos.</h3>
+      <p align="center">* Indica un campo obligatorio.</p>
+
+      <ng-template matStepContent>
+        <form [formGroup]="thirdFormGroup">
+          <mat-form-field appearance="outline">
+            <mat-label>Contraseña</mat-label>
+            <mat-icon matPrefix class="custom-icon">lock</mat-icon>
+            <input matInput formControlName="password" required  [type]="hide ? 'password' : 'text'">
+            <button mat-icon-button matSuffix (click)="clickEvent($event)" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon class="custom-icon">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            @if (thirdFormGroup.controls["password"].hasError('required')) {
+              <mat-error>La contraseña debe tener entre <strong>4 y 60 caracteres</strong>.</mat-error>
+            }
+            @if (thirdFormGroup.controls["password"].hasError('minlength') || thirdFormGroup.controls["password"].hasError('maxlength')) {
+              <mat-error>La contraseña debe tener entre <strong>4 y 60 caracteres</strong>.</mat-error>
+            }
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Confirmar contraseña</mat-label>
+            <input matInput type="password" formControlName="confirmPassword" required>
+            @if (thirdFormGroup.controls["confirmPassword"].hasError('required')) {
+              <mat-error>Este campo es <strong>obligatorio</strong>.</mat-error>
+            }
+          </mat-form-field>
+        </form>
+
+        <mat-grid-list cols="2" rowHeight="2:1" [gutterSize]="gutterSize()">
+          <mat-grid-tile>
+            <button mat-raised-button matStepperPrevious>Atrás</button>
+          </mat-grid-tile>
+
+          <mat-grid-tile>
+            <button mat-raised-button color="primary" (click)="registrar()">Registrarse</button>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </ng-template>
+    </mat-step>
+  </mat-card>
+</mat-stepper>
+
+<!--<mat-spinner></mat-spinner>-->

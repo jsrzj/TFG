@@ -1,0 +1,20 @@
+<div class="container">
+  <swiper-container
+    loop="false"
+    autoplay-delay="1500"
+    speed="500"
+    effect="coverflow"
+    [breakpoints]="breakpoints"
+    slides-per-view="1"
+    slides-per-group="1"
+  >
+    @for (pelicula of peliculas; track pelicula._id) {
+      <swiper-slide>
+        <img src="http://localhost:3000/{{ pelicula.escena }}">
+        <div class="info-container">
+          {{ pelicula.titulo }}
+        </div>
+      </swiper-slide>
+    }
+  </swiper-container>
+</div>

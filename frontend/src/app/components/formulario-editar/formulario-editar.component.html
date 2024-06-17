@@ -1,0 +1,109 @@
+<div id="contenedorForm">
+  <form [formGroup]="peliculaForm" (ngSubmit)="crearPelicula()">
+    <div class="row">
+      <div class="col">
+        <mat-form-field appearance="outline">
+          <mat-label>ID</mat-label>
+          <input matInput formControlName="id" (blur)="onIdBlur()" name="id">
+          @if (peliculaForm.controls["id"].hasError('required')) {
+            <mat-error>Este campo es <strong>obligatorio</strong></mat-error>
+          }
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <mat-form-field appearance="outline">
+          <mat-label>Título</mat-label>
+          <input matInput formControlName="titulo">
+          @if (peliculaForm.controls["titulo"].hasError('required')) {
+            <mat-error>Este campo es <strong>obligatorio</strong></mat-error>
+          }
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col" style="margin-right: 10px;">
+        <mat-form-field appearance="outline">
+          <mat-label>Año</mat-label>
+          <input matInput formControlName="anyo">
+          @if (peliculaForm.controls["anyo"].hasError('required')) {
+            <mat-error>Este campo es <strong>obligatorio</strong></mat-error>
+          }
+        </mat-form-field>
+      </div>
+
+      <div class="col">
+        <mat-form-field appearance="outline">
+          <mat-label>Duración</mat-label>
+          <input matInput formControlName="duracion">
+          @if (peliculaForm.controls["duracion"].hasError('required')) {
+            <mat-error>Este campo es <strong>obligatorio</strong></mat-error>
+          }
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <mat-form-field appearance="outline">
+          <mat-label>Descripción</mat-label>
+          <textarea matInput formControlName="descripcion"></textarea>
+          @if (peliculaForm.controls["descripcion"].hasError('required')) {
+            <mat-error>Este campo es <strong>obligatorio</strong></mat-error>
+          }
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-select placeholder="Género" formControlName="genero">
+          @for (genero of generos; track genero) {
+            <mat-option [value]="genero.name">{{ genero.name }}</mat-option>
+          }
+        </mat-select>
+        @if (peliculaForm.controls["genero"].hasError('required')) {
+          <mat-error>Este campo es <strong>obligatorio</strong></mat-error>
+        }
+      </mat-form-field>
+    </div>
+
+    <div>
+      <div style="color: white;">
+        <label>Poster</label>
+        <input type="file" formControlName="poster" (change)="onPosterSeleccionado($event)">
+        @if (peliculaForm.controls["poster"].hasError('required')) {
+          <mat-error>Este campo es <strong>obligatorio</strong></mat-error>
+        }
+      </div>
+
+      <div style="color: white;">
+        <label>Escena</label>
+        <input type="file" formControlName="escena" (change)="onEscenaSeleccionada($event)">
+        @if (peliculaForm.controls["escena"].hasError('required')) {
+          <mat-error>Este campo es <strong>obligatorio</strong></mat-error>
+        }
+      </div>
+
+      <div style="color: white;">
+        <label>Video</label>
+        <input type="file" formControlName="video" (change)="onVideoSeleccionado($event)">
+        @if (peliculaForm.controls["video"].hasError('required')) {
+          <mat-error>Este campo es <strong>obligatorio</strong></mat-error>
+        }
+      </div>
+    </div>
+
+    <div class="row">
+      <p><mat-checkbox formControlName="estreno">estreno</mat-checkbox></p>
+      <p><mat-checkbox formControlName="popular">popular</mat-checkbox></p>
+      <p><mat-checkbox formControlName="premiada">premiada</mat-checkbox></p>
+      <p><mat-checkbox formControlName="hollywood">hollywood</mat-checkbox></p>
+    </div>
+
+    <button mat-raised-button color="primary" type="submit">Editar pelicula</button>
+  </form>
+</div>

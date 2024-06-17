@@ -1,0 +1,24 @@
+<app-header-browse/>
+<app-sidenav>
+  @if (encontrado) {
+    <app-carousel [peliculas]="peliculasSearch"/>
+  }
+  @else {
+    <div style="text-align: center; margin-top: 400px;">No hemos encontrado esa película :(</div>
+  }
+
+  <!--<div id="contenedor">
+    <mat-grid-list cols="7" rowHeight="325px" gutterSize="25px">
+      @for (pelicula of peliculasSearch; track pelicula._id) {
+        <mat-grid-tile (click)="saludo()">
+          <div>
+            <div [style.backgroundImage]="'url(' + (pelicula?.poster) + ')'"></div>
+            <div>{{ pelicula.titulo }}</div>
+          </div>
+        </mat-grid-tile>
+      }
+    </mat-grid-list>
+  </div>-->
+
+</app-sidenav>
+<app-footer/>

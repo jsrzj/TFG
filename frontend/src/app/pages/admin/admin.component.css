@@ -1,0 +1,8 @@
+mat-tab-group {
+  margin-top: 100px;
+}
+
+::ng-deep .snackbar-exito-pelicula {
+  --mdc-snackbar-container-color: green;
+  --mdc-snackbar-supporting-text-color: white;
+}

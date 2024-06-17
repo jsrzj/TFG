@@ -1,0 +1,6 @@
+@if (pelicula) {
+  <div id="contenedor" (click)="openDialog('250ms', '250ms', pelicula._id)">
+    <img src="http://localhost:3000/{{ pelicula.poster }}">
+    <div id="tituloPelicula">{{pelicula.titulo}}</div>
+  </div>
+}

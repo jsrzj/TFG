@@ -1,0 +1,22 @@
+<app-header-browse></app-header-browse>
+<app-sidenav>
+  <!--<app-banner />-->
+  <mat-chip-listbox style="margin-top: 90px; margin-left: 20px;">
+    @for (genero of generos; track $index) {
+      <mat-chip-option (click)="getPeliculasGenero(genero)">{{ genero }}</mat-chip-option>
+    }
+  </mat-chip-listbox>
+
+  <!--<app-carousel [peliculas]="peliculas"/>-->
+
+  <div>
+    <mat-grid-list cols="7" rowHeight="400px" [gutterSize]="'20px'">
+      @for (pelicula of peliculas; track $index) {
+        <mat-grid-tile>
+          <app-card-pelicula [pelicula]="pelicula"/>
+        </mat-grid-tile>
+      }
+    </mat-grid-list>
+  </div>
+</app-sidenav>
+<app-footer></app-footer>

@@ -1,0 +1,18 @@
+<div id="contenedorForm">
+  <form [formGroup]="peliculaForm" (ngSubmit)="eliminarPelicula()">
+    <div class="row">
+      <div class="col">
+        <mat-form-field appearance="outline">
+          <mat-label>ID</mat-label>
+          <input matInput formControlName="id">
+          @if (peliculaForm.controls["id"].hasError('required')) {
+            <mat-error>Este campo es <strong>obligatorio</strong></mat-error>
+          }
+        </mat-form-field>
+      </div>
+    </div>
+
+    <button mat-raised-button color="primary" type="submit">Eliminar pelicula</button>
+  </form>
+</div>
+

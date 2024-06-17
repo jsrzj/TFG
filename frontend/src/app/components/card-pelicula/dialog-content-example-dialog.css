@@ -1,0 +1,74 @@
+#dialog {
+  overflow-y: hidden;
+}
+
+h1, p {
+  color: white;
+}
+
+#contenedorImg {
+  background-size: cover;
+  width: 100%;
+  height: 330px; /*325*/
+  z-index: 1;
+}
+
+#contenedorImg img {
+  width: 100%;
+  height: 100%;
+}
+
+#contenedorInfo {
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 0 90px 120px rgb(32, 33, 36);
+  background-color: rgb(32, 33, 36);
+  padding: 25px;
+}
+
+a {
+  background-color: white;
+  width: 150px;
+  height: 40px;
+  color: black;
+  border-radius: 5px;
+}
+
+#contenedorAnyoTiempo {
+  width: 100px;
+  margin-top: 3px;
+  overflow: hidden;
+}
+
+#contenedorAnyoTiempo p:nth-child(1) {
+  color: rgb(170, 170, 170);
+  float: left;
+}
+
+#contenedorAnyoTiempo p:nth-child(2) {
+  color: rgb(170, 170, 170);
+  float: right;
+}
+
+#contenedorDescripcion {
+  margin-top: 10px;
+}
+
+#contenedorGenero {
+  margin-top: 30px;
+}
+
+#contenedorGenero p {
+  color: rgb(170, 170, 170);
+}
+
+#contenedorGenero p span {
+  color: white;
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 600px) {
+  #contenedorImg img {
+    height: 280px;
+  }
+}
